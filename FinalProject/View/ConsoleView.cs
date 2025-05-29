@@ -29,7 +29,7 @@ namespace Views
                 Console.WriteLine("2. Show all");
                 Console.WriteLine("3. Save to file");
                 Console.WriteLine("4. Load from file");
-                Console.WriteLine("5. Searcht");
+                Console.WriteLine("5. Search");
                 Console.WriteLine("6. Remove");
                 Console.WriteLine("7. Change position");
                 Console.WriteLine("8. Exit");
@@ -125,8 +125,8 @@ namespace Views
             string type;
             while (true)
             {
-                Console.WriteLine("1. Hourly employee");
-                Console.WriteLine("2. Salaried employee");
+                Console.WriteLine("1. PartTime employee");
+                Console.WriteLine("2. FullTime employee");
                 Console.Write("Choose type: ");
                 try
                 {
