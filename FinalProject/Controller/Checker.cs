@@ -19,8 +19,6 @@ namespace Controllers
         }
         public static string CheckName(string name)
         {
-            if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentNullException("Name cannot be empty.");
             if (name.Length < 3 || !char.IsUpper(name[0]))
                 throw new ArgumentException("Name must start with an uppercase letter and be at least 3 characters long.");
             return name;
@@ -28,8 +26,6 @@ namespace Controllers
 
         public static int CheckId(string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException("ID cannot be empty.");
             if (!int.TryParse(input, out int id))
                 throw new FormatException("ID must be a valid integer.");
             if (id < 0)
@@ -41,8 +37,6 @@ namespace Controllers
 
         public static string CheckPosition(string pos)
         {
-            if (string.IsNullOrWhiteSpace(pos))
-                throw new ArgumentNullException("Position cannot be empty.");
             if (pos.Length < 2 || !char.IsUpper(pos[0]))
                 throw new ArgumentException("Position must start with an uppercase letter and be at least 2 characters long.");
             return pos;
@@ -50,8 +44,6 @@ namespace Controllers
 
         public static DateTime CheckHireDate(string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException("Hire date cannot be empty.");
             if (!DateTime.TryParse(input, out DateTime date))
                 throw new FormatException("Invalid date format. Please use yyyy-mm-dd.");
             return date;
@@ -59,8 +51,6 @@ namespace Controllers
 
         public static int CheckExperience(string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException("Experience cannot be empty.");
             if (!int.TryParse(input, out int exp))
                 throw new FormatException("Experience must be a valid integer.");
             if (exp < 0)
@@ -70,8 +60,6 @@ namespace Controllers
 
         public static decimal CheckSalary(string input, string fieldName)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException($"{fieldName} cannot be empty.");
             if (!decimal.TryParse(input, out decimal value))
                 throw new FormatException($"{fieldName} must be a valid decimal number.");
             if (value <= 0)
@@ -80,8 +68,6 @@ namespace Controllers
         }
         public static decimal CheckRate(string input, string fieldName)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException($"{fieldName} cannot be empty.");
             if (!decimal.TryParse(input, out decimal value))
                 throw new FormatException($"{fieldName} must be a valid decimal number.");
             if (value <= 0)
@@ -91,8 +77,6 @@ namespace Controllers
 
         public static int CheckWorkedHours(string input, string fieldName)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException($"{fieldName} cannot be empty.");
             if (!int.TryParse(input, out int val))
                 throw new FormatException($"{fieldName} must be a valid integer.");
             if (val < 0)
@@ -102,8 +86,6 @@ namespace Controllers
 
         public static int CheckWorkedDays(string input, string fieldName)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                throw new ArgumentNullException($"{fieldName} cannot be empty.");
             if (!int.TryParse(input, out int val))
                 throw new FormatException($"{fieldName} must be a valid integer.");
             if (val < 0 || val > 31)

@@ -34,14 +34,14 @@ public class InputTests
     }
 
     [TestMethod]
-    public void ExpirienxeInputTest()
+    public void HireDateInputTest2()
     {
-        var ex = Assert.ThrowsException<ArgumentNullException>(() => InputChecker.CheckExperience(""));
-        Assert.AreEqual("Experience cannot be empty.", ex.Message);
+        var ex = Assert.ThrowsException<ArgumentNullException>(() => InputChecker.CheckHireDate("date"));
+        Assert.AreEqual("Hire date cannot be empty.", ex.Message);
     }
 
     [TestMethod]
-    public void ExpirienxeInputTest2()
+    public void ExpirienxeInputTest()
     {
         var ex = Assert.ThrowsException<ArgumentException>(() => InputChecker.CheckExperience("-1"));
         Assert.AreEqual("Experience cannot be negative.", ex.Message);
@@ -52,6 +52,21 @@ public class InputTests
     {
         var ex = Assert.ThrowsException<ArgumentException>(() => InputChecker.CheckId("-12"));
         Assert.AreEqual("ID cannot be negative.", ex.Message);
+    }
+
+
+    [TestMethod]
+    public void PositionInputTest2()
+    {
+        var ex = Assert.ThrowsException<ArgumentException>(() => InputChecker.CheckPosition("position"));
+        Assert.AreEqual("Position must start with an uppercase letter and be at least 2 characters long.", ex.Message);
+    }
+
+    [TestMethod]
+    public void PositionInputTest3()
+    {
+        var ex = Assert.ThrowsException<ArgumentException>(() => InputChecker.CheckPosition("G"));
+        Assert.AreEqual("Position must start with an uppercase letter and be at least 2 characters long.", ex.Message);
     }
 
 }
